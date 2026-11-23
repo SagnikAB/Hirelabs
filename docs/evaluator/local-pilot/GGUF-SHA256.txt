@@ -1,0 +1,1 @@
+992c363b790779a266a9fb029a33f822bdf71272e16beea7a399c96afa899ac4  hirelabs-evaluator.gguf

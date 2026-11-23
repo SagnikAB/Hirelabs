@@ -1,0 +1,68 @@
+[
+  {
+    "id": "both-documented",
+    "reference": "strong",
+    "body": {
+      "mode": "candidate",
+      "role": "Platform developer",
+      "jobDescription": "Build Python APIs and deploy them to Kubernetes. Both skills are required.",
+      "candidate": {
+        "parsedText": "Developed Python APIs for inventory and deployed them to Kubernetes."
+      }
+    },
+    "model": "hirelabs-evaluator",
+    "raw": "{\"candidate_summary\":\"Developed Python APIs for inventory and deployed them to Kubernetes.\",\"relevant_experience_summary\":\"No relevant work example is documented.\",\"technical_strengths\":[\"Python\"],\"relevant_projects\":[],\"fit_verdict\":\"strong\",\"fit_score\":87,\"confidence\":75,\"strengths\":[\"Developed Python APIs for inventory and deployed them to Kubernetes.\"],\"gaps\":[\"Kubernetes deployment is not demonstrated in the supplied excerpt.\"],\"evidence_signals\":[\"Developed Python APIs for inventory and deployed them to Kubernetes.\"],\"risk_flags\":[],\"interview_questions\":[\"Ask for an example of deploying the Python APIs on Kubernetes.\"],\"recommendation\":\"Ask for an example of deploying the Python APIs on Kubernetes.\",\"skill_gap_analysis\":{\"demonstrated_skills\":[\"Python\"],\"partially_demonstrated_skills\":[],\"missing_required_skills\":[\"Kubernetes deployment is not demonstrated in the supplied excerpt.\"],\"missing_preferred_skills\":[],\"unverified_skills\":[],\"skill_gap_summary\":\"Python is documented but Kubernetes deployment is not supported in the supplied excerpt.\"},\"recruiter_insights\":{\"strongest_alignment\":[\"Python\"],\"areas_for_verification\":[\"Kubernetes deployment is not demonstrated in the supplied excerpt.\"],\"suggested_interview_focus\":[\"Ask for an example of deploying the Python APIs on Kubernetes.\"],\"overall_assessment\":\"The supplied excerpt signals strong alignment with the Build Python APIs and deploy them to Kubernetes requirement, but additional verification may be needed for the Kubernetes deployment part.\"}}",
+    "strictObject": true,
+    "appAccepted": true,
+    "ollamaModel": "hirelabs-evaluator",
+    "stop": "stop",
+    "tokens": 288,
+    "seconds": 14.6355395,
+    "verdict": "strong",
+    "score": 87
+  },
+  {
+    "id": "one-documented",
+    "reference": "moderate",
+    "body": {
+      "mode": "candidate",
+      "role": "Platform developer",
+      "jobDescription": "Build Python APIs and deploy them to Kubernetes. Both skills are required.",
+      "candidate": {
+        "parsedText": "Implemented a Python API to reconcile invoices. Wrote integration tests for each endpoint."
+      }
+    },
+    "model": "hirelabs-evaluator",
+    "raw": "{\"candidate_summary\":\"Implemented a Python API to reconcile invoices.\",\"relevant_experience_summary\":\"Built a Python API and deployed it to Kubernetes.\",\"technical_strengths\":[\"Python\",\"Kubernetes\"],\"relevant_projects\":[],\"fit_verdict\":\"strong\",\"fit_score\":87,\"confidence\":7,\"strengths\":[\"Built a Python API and deployed it to Kubernetes.\"],\"gaps\":[],\"evidence_signals\":[\"Implemented a Python API to reconcile invoices.\"],\"risk_flags\":[],\"interview_questions\":[\"Ask for an example of work building a Python API and deploying it to Kubernetes.\"],\"recommendation\":\"Ask for an example of work building a Python API and deploying it to Kubernetes.\",\"skill_gap_analysis\":{\"demonstrated_skills\":[\"Python\",\"Kubernetes\"],\"partially_demonstrated_skills\":[],\"missing_required_skills\":[],\"missing_preferred_skills\":[],\"unverified_skills\":[],\"skill_gap_summary\":\"Both skills are required.\"},\"recruiter_insights\":{\"strongest_alignment\":[\"Python\",\"Kubernetes\"],\"areas_for_verification\":[],\"suggested_interview_focus\":[\"Ask for an example of work building a Python API and deploying it to Kubernetes.\"],\"overall_assessment\":\"The supplied excerpt provides sufficient evidence to support the stated requirements.\"}}",
+    "strictObject": true,
+    "appAccepted": true,
+    "ollamaModel": "hirelabs-evaluator",
+    "stop": "stop",
+    "tokens": 241,
+    "seconds": 6.3495665,
+    "verdict": "strong",
+    "score": 87
+  },
+  {
+    "id": "thin-excerpt",
+    "reference": "insufficient_evidence",
+    "body": {
+      "mode": "candidate",
+      "role": "Platform developer",
+      "jobDescription": "Build Python APIs and deploy them to Kubernetes. Both skills are required.",
+      "candidate": {
+        "parsedText": "Resume heading only."
+      }
+    },
+    "model": "hirelabs-evaluator",
+    "raw": "{\"candidate_summary\":\"Resume heading is the only documented work example.\",\"relevant_experience_summary\":\"No relevant work example is documented.\",\"technical_strengths\":[],\"relevant_projects\":[],\"fit_verdict\":\"insufficient_evidence\",\"fit_score\":0,\"confidence\":15,\"strengths\":[],\"gaps\":[\"Build Python APIs is required but is not demonstrated in the supplied excerpt.\",\"Deploy APIs to Kubernetes is required but is not demonstrated in the supplied excerpt.\"],\"evidence_signals\":[],\"risk_flags\":[],\"interview_questions\":[\"Ask for an example of work building Python APIs.\",\"Request verification for deploying APIs to Kubernetes.\"],\"recommendation\":\"Ask for an example of work building Python APIs and verifying deployment to Kubernetes.\",\"skill_gap_analysis\":{\"demonstrated_skills\":[],\"partially_demonstrated_skills\":[],\"missing_required_skills\":[\"Build Python APIs\",\"Deploy APIs to Kubernetes\"],\"missing_preferred_skills\":[],\"unverified_skills\":[],\"skill_gap_summary\":\"Both Build Python APIs and Deploy APIs to Kubernetes are required but neither is demonstrated in the supplied excerpt.\"},\"recruiter_insights\":{\"strongest_alignment\":[],\"areas_for_verification\":[\"Build Python APIs\",\"Deploy APIs to Kubernetes\"],\"suggested_interview_focus\":[\"Ask for an example of work building Python APIs.\",\"Request verification for deploying APIs to Kubernetes.\"],\"overall_assessment\":\"The supplied excerpt provides limited evidence for this role.\"}}",
+    "strictObject": true,
+    "appAccepted": true,
+    "ollamaModel": "hirelabs-evaluator",
+    "stop": "stop",
+    "tokens": 275,
+    "seconds": 10.4062537,
+    "verdict": "insufficient_evidence",
+    "score": 0
+  }
+]

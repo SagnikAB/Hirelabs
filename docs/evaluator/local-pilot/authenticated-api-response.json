@@ -1,0 +1,54 @@
+{
+  "success": true,
+  "data": {
+    "result": {
+      "candidate_summary": "Implemented a Python API to reconcile invoices.",
+      "relevant_experience_summary": "Built a Python API and deployed it to Kubernetes.",
+      "technical_strengths": [
+        "Python",
+        "Kubernetes"
+      ],
+      "relevant_projects": [],
+      "fit_verdict": "strong",
+      "fit_score": 87,
+      "confidence": 7,
+      "strengths": [
+        "Built a Python API and deployed it to Kubernetes."
+      ],
+      "gaps": [],
+      "evidence_signals": [
+        "Implemented a Python API to reconcile invoices."
+      ],
+      "risk_flags": [],
+      "interview_questions": [
+        "Ask for an example of work building a Python API and deploying it to Kubernetes."
+      ],
+      "recommendation": "Ask for an example of work building a Python API and deploying it to Kubernetes.",
+      "skill_gap_analysis": {
+        "demonstrated_skills": [
+          "Python",
+          "Kubernetes"
+        ],
+        "partially_demonstrated_skills": [],
+        "missing_required_skills": [],
+        "missing_preferred_skills": [],
+        "unverified_skills": [],
+        "skill_gap_summary": "Both skills are required."
+      },
+      "recruiter_insights": {
+        "strongest_alignment": [
+          "Python",
+          "Kubernetes"
+        ],
+        "areas_for_verification": [],
+        "suggested_interview_focus": [
+          "Ask for an example of work building a Python API and deploying it to Kubernetes."
+        ],
+        "overall_assessment": "The supplied excerpt provides sufficient evidence to support the stated requirements."
+      },
+      "evidence_removed": 0
+    },
+    "model": "hirelabs-evaluator",
+    "model_used": "hirelabs-evaluator"
+  }
+}

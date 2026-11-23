@@ -1,0 +1,39 @@
+{
+  "name": "hirelab",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "npm run lint && npm run typecheck && npm run test",
+    "build:roses": "node scripts/landing/build-paper-bouquet.mjs"
+  },
+  "dependencies": {
+    "@google/genai": "^2.24.0",
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.112.4",
+    "jszip": "3.10.2",
+    "mammoth": "1.12.2",
+    "motion": "^12.43.0",
+    "next": "^16.3.3",
+    "pdf-parse": "2.4.5",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "saxes": "6.0.0",
+    "word-extractor": "1.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "26.4.0",
+    "@types/react": "19.2.18",
+    "csv-parse": "^7.0.3",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.3",
+    "typescript": "7.0.2",
+    "vitest": "^3.2.7"
+  }
+}

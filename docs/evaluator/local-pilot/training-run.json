@@ -1,0 +1,324 @@
+{
+  "base": "Qwen/Qwen2.5-1.5B-Instruct",
+  "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "method": "BF16 LoRA, assistant-only loss",
+  "r": 8,
+  "alpha": 16,
+  "lr": 0.0002,
+  "epochs": 2,
+  "seed": 42,
+  "targets": [
+    "k_proj",
+    "o_proj",
+    "q_proj",
+    "v_proj"
+  ],
+  "examples": 25,
+  "data_sha256": "272a1bcde6c37cc468329a48f3edce1855096df9d6e4c73987f49cec2048864a",
+  "gpu": "NVIDIA GeForce RTX 4060 Ti",
+  "torch": "2.10.0+cu128",
+  "transformers": "4.57.3",
+  "peft": "0.18.0",
+  "losses": [
+    {
+      "step": 1,
+      "epoch": 1,
+      "example": "pilot-17",
+      "loss": 1.3363133668899536
+    },
+    {
+      "step": 2,
+      "epoch": 1,
+      "example": "pilot-13",
+      "loss": 1.2719963788986206
+    },
+    {
+      "step": 3,
+      "epoch": 1,
+      "example": "pilot-10",
+      "loss": 1.1213648319244385
+    },
+    {
+      "step": 4,
+      "epoch": 1,
+      "example": "pilot-20",
+      "loss": 1.3087565898895264
+    },
+    {
+      "step": 5,
+      "epoch": 1,
+      "example": "pilot-19",
+      "loss": 1.231415033340454
+    },
+    {
+      "step": 6,
+      "epoch": 1,
+      "example": "pilot-7",
+      "loss": 1.100351095199585
+    },
+    {
+      "step": 7,
+      "epoch": 1,
+      "example": "pilot-6",
+      "loss": 0.9161259531974792
+    },
+    {
+      "step": 8,
+      "epoch": 1,
+      "example": "pilot-11",
+      "loss": 0.9767878651618958
+    },
+    {
+      "step": 9,
+      "epoch": 1,
+      "example": "pilot-16",
+      "loss": 0.931411623954773
+    },
+    {
+      "step": 10,
+      "epoch": 1,
+      "example": "pilot-22",
+      "loss": 0.8036633133888245
+    },
+    {
+      "step": 11,
+      "epoch": 1,
+      "example": "pilot-12",
+      "loss": 0.7940238118171692
+    },
+    {
+      "step": 12,
+      "epoch": 1,
+      "example": "pilot-18",
+      "loss": 0.6855871081352234
+    },
+    {
+      "step": 13,
+      "epoch": 1,
+      "example": "pilot-2",
+      "loss": 0.5553833246231079
+    },
+    {
+      "step": 14,
+      "epoch": 1,
+      "example": "pilot-15",
+      "loss": 0.6353985071182251
+    },
+    {
+      "step": 15,
+      "epoch": 1,
+      "example": "pilot-23",
+      "loss": 0.5905213356018066
+    },
+    {
+      "step": 16,
+      "epoch": 1,
+      "example": "pilot-14",
+      "loss": 0.40816330909729004
+    },
+    {
+      "step": 17,
+      "epoch": 1,
+      "example": "pilot-3",
+      "loss": 0.4552921652793884
+    },
+    {
+      "step": 18,
+      "epoch": 1,
+      "example": "pilot-24",
+      "loss": 0.3955234885215759
+    },
+    {
+      "step": 19,
+      "epoch": 1,
+      "example": "pilot-5",
+      "loss": 0.43387749791145325
+    },
+    {
+      "step": 20,
+      "epoch": 1,
+      "example": "p_train_j_9001_r_9001",
+      "loss": 1.4787509441375732
+    },
+    {
+      "step": 21,
+      "epoch": 1,
+      "example": "pilot-8",
+      "loss": 0.2430887520313263
+    },
+    {
+      "step": 22,
+      "epoch": 1,
+      "example": "pilot-9",
+      "loss": 0.340756356716156
+    },
+    {
+      "step": 23,
+      "epoch": 1,
+      "example": "pilot-1",
+      "loss": 0.3108697235584259
+    },
+    {
+      "step": 24,
+      "epoch": 1,
+      "example": "pilot-4",
+      "loss": 0.17662867903709412
+    },
+    {
+      "step": 25,
+      "epoch": 1,
+      "example": "pilot-21",
+      "loss": 0.27588996291160583
+    },
+    {
+      "step": 26,
+      "epoch": 2,
+      "example": "pilot-3",
+      "loss": 0.1471184343099594
+    },
+    {
+      "step": 27,
+      "epoch": 2,
+      "example": "pilot-13",
+      "loss": 0.20156584680080414
+    },
+    {
+      "step": 28,
+      "epoch": 2,
+      "example": "pilot-12",
+      "loss": 0.09762316942214966
+    },
+    {
+      "step": 29,
+      "epoch": 2,
+      "example": "pilot-8",
+      "loss": 0.0785633996129036
+    },
+    {
+      "step": 30,
+      "epoch": 2,
+      "example": "p_train_j_9001_r_9001",
+      "loss": 1.5364043712615967
+    },
+    {
+      "step": 31,
+      "epoch": 2,
+      "example": "pilot-4",
+      "loss": 0.050819315016269684
+    },
+    {
+      "step": 32,
+      "epoch": 2,
+      "example": "pilot-10",
+      "loss": 0.13135772943496704
+    },
+    {
+      "step": 33,
+      "epoch": 2,
+      "example": "pilot-23",
+      "loss": 0.06382793933153152
+    },
+    {
+      "step": 34,
+      "epoch": 2,
+      "example": "pilot-18",
+      "loss": 0.09781868755817413
+    },
+    {
+      "step": 35,
+      "epoch": 2,
+      "example": "pilot-16",
+      "loss": 0.020511042326688766
+    },
+    {
+      "step": 36,
+      "epoch": 2,
+      "example": "pilot-22",
+      "loss": 0.05118686333298683
+    },
+    {
+      "step": 37,
+      "epoch": 2,
+      "example": "pilot-21",
+      "loss": 0.1247129887342453
+    },
+    {
+      "step": 38,
+      "epoch": 2,
+      "example": "pilot-17",
+      "loss": 0.11124195158481598
+    },
+    {
+      "step": 39,
+      "epoch": 2,
+      "example": "pilot-15",
+      "loss": 0.024166999384760857
+    },
+    {
+      "step": 40,
+      "epoch": 2,
+      "example": "pilot-2",
+      "loss": 0.020395154133439064
+    },
+    {
+      "step": 41,
+      "epoch": 2,
+      "example": "pilot-20",
+      "loss": 0.009125438518822193
+    },
+    {
+      "step": 42,
+      "epoch": 2,
+      "example": "pilot-7",
+      "loss": 0.021581903100013733
+    },
+    {
+      "step": 43,
+      "epoch": 2,
+      "example": "pilot-5",
+      "loss": 0.06228068470954895
+    },
+    {
+      "step": 44,
+      "epoch": 2,
+      "example": "pilot-24",
+      "loss": 0.0047470638528466225
+    },
+    {
+      "step": 45,
+      "epoch": 2,
+      "example": "pilot-11",
+      "loss": 0.00959322415292263
+    },
+    {
+      "step": 46,
+      "epoch": 2,
+      "example": "pilot-14",
+      "loss": 0.015779893845319748
+    },
+    {
+      "step": 47,
+      "epoch": 2,
+      "example": "pilot-6",
+      "loss": 0.009067089296877384
+    },
+    {
+      "step": 48,
+      "epoch": 2,
+      "example": "pilot-1",
+      "loss": 0.028054287657141685
+    },
+    {
+      "step": 49,
+      "epoch": 2,
+      "example": "pilot-9",
+      "loss": 0.02426730841398239
+    },
+    {
+      "step": 50,
+      "epoch": 2,
+      "example": "pilot-19",
+      "loss": 0.009755630046129227
+    }
+  ]
+}

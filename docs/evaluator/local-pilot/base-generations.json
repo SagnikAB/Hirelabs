@@ -1,0 +1,68 @@
+[
+  {
+    "id": "both-documented",
+    "reference": "strong",
+    "body": {
+      "mode": "candidate",
+      "role": "Platform developer",
+      "jobDescription": "Build Python APIs and deploy them to Kubernetes. Both skills are required.",
+      "candidate": {
+        "parsedText": "Developed Python APIs for inventory and deployed them to Kubernetes."
+      }
+    },
+    "model": "hirelabs-pilot-base",
+    "raw": "{\n  \"candidate_summary\": \"The candidate has demonstrated experience in developing Python APIs, which is relevant to the Platform Developer role.\",\n  \"relevant_experience_summary\": \"The candidate has developed Python APIs for inventory management and deployed them to Kubernetes, aligning with the job requirements of building Python APIs and deploying them to Kubernetes.\",\n  \"technical_strengths\": [\n    \"Python API development\",\n    \"Kubernetes deployment\"\n  ],\n  \"relevant_projects\": [],\n  \"fit_verdict\": \"strong\",\n  \"fit_score\": 90,\n  \"confidence\": 85,\n  \"strengths\": [\"Python API development\", \"Kubernetes deployment\"],\n  \"gaps\": [\n    \"Not provided\",\n    \"Not provided\"\n  ],\n  \"evidence_signals\": [],\n  \"risk_flags\": [],\n  \"interview_questions\": [\n    \"Describe a project where you developed Python APIs.\",\n    \"Explain how you deployed your Python API to Kubernetes.\"\n  ],\n  \"recommendation\": \"The candidate's experience in developing Python APIs and deploying them to Kubernetes aligns well with the job requirements. Further verification of their skills is recommended for a comprehensive assessment.\"\n  ,\n  \"skill_gap_analysis\": {\n    \"demonstrated_skills\": [\n      \"Python API development\",\n      \"Kubernetes deployment\"\n    ],\n    \"partially_demonstrated_skills\": [],\n    \"missing_required_skills\": [],\n    \"missing_preferred_skills\": [],\n    \"unverified_skills\": []\n  \t,\n  \"skill_gap_summary\": \"The candidate has demonstrated skills in Python API development and Kubernetes deployment, which are required for the Platform Developer role. There are no missing or unverified skills.\"\n} ,\n\n  \"recruiter_insights\": {\n    \"strongest_alignment\": [\"Python API development\", \"Kubernetes deployment\"],\n    \"areas_for_verification\": [],\n    \"suggested_interview_focus\": [\n      \"Describe a project where you developed Python APIs.\",\n      \"Explain how you deployed your Python API to Kubernetes.\"\n    ],\n    \"overall_assessment\": \"The candidate's experience in developing Python APIs and deploying them to Kubernetes aligns well with the job requirements. Further verification of their skills is recommended for a comprehensive assessment.\"\n  }\n}",
+    "strictObject": true,
+    "appAccepted": true,
+    "ollamaModel": "hirelabs-pilot-base",
+    "stop": "stop",
+    "tokens": 468,
+    "seconds": 24.19716,
+    "verdict": "strong",
+    "score": 90
+  },
+  {
+    "id": "one-documented",
+    "reference": "moderate",
+    "body": {
+      "mode": "candidate",
+      "role": "Platform developer",
+      "jobDescription": "Build Python APIs and deploy them to Kubernetes. Both skills are required.",
+      "candidate": {
+        "parsedText": "Implemented a Python API to reconcile invoices. Wrote integration tests for each endpoint."
+      }
+    },
+    "model": "hirelabs-pilot-base",
+    "raw": "{\n  \"candidate_summary\": \"The candidate has demonstrated experience in implementing and testing Python APIs.\",\n  \"relevant_experience_summary\": \"Experience with building Python APIs and writing integration tests.\",\n  \"technical_strengths\": [\"Python API development\", \"Integration testing\"],\n  \"relevant_projects\": [],\n  \"fit_verdict\": \"strong\",\n  \"fit_score\": 90,\n  \"confidence\": 85,\n  \"strengths\": [\n    \"Demonstrated experience in Python API development and integration testing\"\n  ],\n  \"gaps\": [\n    \"Missing required skills: Kubernetes deployment of APIs, Python API documentation, and project management tools.\"\n  ],\n  \"evidence_signals\": [],\n  \"risk_flags\": [],\n  \"interview_questions\": [\"Can you describe a time when you deployed a Python API to production?\", \"How do you ensure the security of your APIs?\"],\n  \"recommendation\": \"The candidate has demonstrated relevant skills in Python API development and integration testing. However, there are gaps in their experience with Kubernetes deployment and project management tools. The recruiter should verify these areas through additional references or projects.\"\n  ,\n  \"skill_gap_analysis\": {\n    \"demonstrated_skills\": [\"Python API development\", \"Integration testing\"],\n    \"partially_demonstrated_skills\": [],\n    \"missing_required_skills\": [\"Kubernetes deployment of APIs\", \"Python API documentation\", \"Project management tools\"],\n    \"missing_preferred_skills\": [],\n    \"unverified_skills\": []\n  \t,\n  \"skill_gap_summary\": \"The candidate has demonstrated skills in Python API development and integration testing, but lacks experience with Kubernetes deployment, Python API documentation, and project management tools.\"\n} ,\n\n\"recruiter_insights\": {\n  \"strongest_alignment\": [\"Demonstrated skills: Python API development, Integration testing\"],\n  \"areas_for_verification\": [\"Kubernetes deployment of APIs\", \"Python API documentation\", \"Project management tools\"],\n  \"suggested_interview_focus\": [\"Describe a time when you deployed a Python API to production?\", \"How do you ensure the security of your APIs?\"]\n  ,\n  \"overall_assessment\": \"The candidate has demonstrated relevant skills in Python API development and integration testing, but there are gaps that need verification.\"\n} }",
+    "strictObject": true,
+    "appAccepted": true,
+    "ollamaModel": "hirelabs-pilot-base",
+    "stop": "stop",
+    "tokens": 477,
+    "seconds": 16.3751097,
+    "verdict": "strong",
+    "score": 90
+  },
+  {
+    "id": "thin-excerpt",
+    "reference": "insufficient_evidence",
+    "body": {
+      "mode": "candidate",
+      "role": "Platform developer",
+      "jobDescription": "Build Python APIs and deploy them to Kubernetes. Both skills are required.",
+      "candidate": {
+        "parsedText": "Resume heading only."
+      }
+    },
+    "model": "hirelabs-pilot-base",
+    "raw": "{\n  \"candidate_summary\": \"The candidate's professional background is not provided.\",\n  \"relevant_experience_summary\": \"The job description requires experience in building Python APIs and deploying them to Kubernetes, but this information is not present in the resume.\",\n  \"technical_strengths\": [\n    \"Python programming\",\n    \"API development\"\n  ],\n  \"relevant_projects\": [],\n  \"fit_verdict\": \"insufficient_evidence\",\n  \"fit_score\": 0,\n  \"confidence\": 25,\n  \"strengths\": [\"Python programming\", \"API development\"],\n  \"gaps\": [\n    \"Kubernetes deployment experience\"\n  ],\n  \"evidence_signals\": [],\n  \"risk_flags\": [],\n  \"interview_questions\": [\n    \"Can you provide examples of Python APIs and their functionalities?\",\n    \"What is your experience with deploying Python applications to Kubernetes?\"\n  ],\n  \"recommendation\": \"The candidate should be provided additional opportunities for demonstrating relevant skills, such as working on projects that involve API development and Kubernetes deployment.\"\n  ,\n  \"skill_gap_analysis\": {\n    \"demonstrated_skills\": [],\n    \"partially_demonstrated_skills\": [\"Python programming\", \"API development\"],\n    \"missing_required_skills\": [\"Kubernetes deployment experience\"],\n    \"missing_preferred_skills\": [],\n    \"unverified_skills\": []\n  \t,\n  \"skill_gap_summary\": \"The candidate's resume does not provide evidence of relevant skills in Kubernetes deployment, which is a required skill for the job. The candidate should be provided additional opportunities to demonstrate these skills.\"\n} ,\n\n  \"recruiter_insights\": {\n    \"strongest_alignment\": [\"Python programming\", \"API development\"],\n    \"areas_for_verification\": [\"Kubernetes deployment experience\"],\n    \"suggested_interview_focus\": [\n      \"Demonstrate Python API development and its functionalities\",\n      \"Explain the process of deploying a Python application to Kubernetes\"\n    ],\n    \"overall_assessment\": \"The candidate's resume does not provide sufficient evidence for their fit as a Platform Developer. They need additional opportunities to demonstrate relevant skills.\"\n  }\n}",
+    "strictObject": true,
+    "appAccepted": true,
+    "ollamaModel": "hirelabs-pilot-base",
+    "stop": "stop",
+    "tokens": 442,
+    "seconds": 24.3402931,
+    "verdict": "insufficient_evidence",
+    "score": 0
+  }
+]
