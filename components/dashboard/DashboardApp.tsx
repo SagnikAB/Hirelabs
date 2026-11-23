@@ -513,9 +513,7 @@ export default function DashboardApp() {
   const aiCandidates = useMemo(() => {
     return resumes
       .filter(
-        (resume) =>
-          isParsedStatus(resume.processing_status) &&
-          Boolean(resume.parsed_text)
+        (resume) => isParsedStatus(resume.processing_status)
       )
       .map((resume) => ({
         ...resume,

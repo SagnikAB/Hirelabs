@@ -267,7 +267,7 @@ export async function POST(request) {
       auth.user.id,
       fields
     ).select(
-      'id,processing_status,candidate_name,candidate_title,years_experience,extracted_skills,profile_completeness,parser_error,embedded_at'
+      'id,file_name,file_path,file_type,file_size,processing_status,processing_started_at,processing_attempts,created_at,parsed_text,candidate_name,candidate_title,years_experience,extracted_skills,profile_completeness,parser_error,embedded_at'
     ).single();
 
     if (saveError) {
