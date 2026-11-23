@@ -2,7 +2,12 @@ import { describe, it } from 'vitest';
 import assert from 'node:assert/strict';
 
 import { ResumeParseError, detectFileKind, parseResumeBytes } from '../lib/resume/parsing.js';
-import { buildProfile, extractYears } from '../lib/resume/profile.js';
+import {
+  buildProfile,
+  buildRuleBasedDemoProfile,
+  extractYears,
+  RULE_BASED_DEMO_PARSER_ID,
+} from '../lib/resume/profile.js';
 import { contentTypeFor, validateResumeFile } from '../lib/resume/validation.js';
 import { SAMPLE_RESUME_LINES, makeDocx, makePdf, makeZip } from './helpers/fixtures.js';
 
@@ -136,6 +141,16 @@ describe('profile extraction', () => {
   it('ignores dates and phone numbers when reading years of experience', () => {
     assert.equal(extractYears('2019 - 2023, call 555 1234'), null);
     assert.equal(extractYears('3 years at Acme and 5+ yrs overall'), 5);
+  });
+
+  it('labels rule-based fallback profiles as demos, not trained model output', () => {
+    const result = buildRuleBasedDemoProfile(SAMPLE_RESUME_LINES.join('\n'), 'priya.pdf');
+
+    assert.equal(result.modelUsed, RULE_BASED_DEMO_PARSER_ID);
+    assert.equal(result.value.candidateName, 'Priya Raman');
+    assert.equal(result.value.candidateTitle, 'software engineer');
+    assert.ok(result.value.extractedSkills.includes('Kubernetes'));
+    assert.match(result.error, /not a trained model/);
   });
 
   it('falls back to the file name when no name line is found', () => {

@@ -5,6 +5,7 @@ import { MAX_RESUME_BYTES, fileTypeError } from '@/lib/resume/formats';
 import { apiError, apiSuccess } from '@/lib/api/response';
 import { authenticateRequest } from '@/lib/supabase/server-auth';
 import { normalizePythonProfile } from '@/lib/resume/model-parser';
+import { buildRuleBasedDemoProfile } from '@/lib/resume/profile';
 import { callModelServer, useLocalModels } from '@/lib/ai/model-server';
 import { checkAIRateLimit } from '@/lib/api/ai-rate-limit';
 import { embedText } from '@/lib/resume/embedding';
@@ -26,10 +27,12 @@ function calculateCompleteness(profile) {
   return fields.filter(Boolean).length * 25;
 }
 
-/** Structured profile from the team's own parser (hirelabs-parser) on the model server. */
-async function enrichResume(text) {
+/** Prefer the trained parser, then use an explicitly labeled rules-only demo fallback. */
+async function enrichResume(text, fileName) {
+  const fallback = () => buildRuleBasedDemoProfile(text, fileName);
+
   if (!useLocalModels()) {
-    return { value: null, error: 'Text extracted; the HireLabs parser is turned off.' };
+    return fallback();
   }
   try {
     const { value, placeholder } = await callModelServer('/parse', { text });
@@ -46,12 +49,11 @@ async function enrichResume(text) {
         error: null,
       };
     }
-    return { value: null, modelUsed: 'hirelabs-parser', error: 'Text extracted; the HireLabs parser found no profile fields.' };
   } catch (error) {
     // Do not log resume content or model output.
     console.error('Resume parsing model failed:', { name: error instanceof Error ? error.name : 'UnknownError' });
-    return { value: null, error: 'Text extracted; the HireLabs parser is unavailable.' };
   }
+  return fallback();
 }
 
 async function updateResume(
@@ -193,7 +195,7 @@ export async function POST(request) {
       fileName: resume.file_name, contentType: resume.file_type,
     });
 
-    const enrichment = await enrichResume(text);
+    const enrichment = await enrichResume(text, resume.file_name);
 
     const profile = enrichment.value || {
       candidateName: null,

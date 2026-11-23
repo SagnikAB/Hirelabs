@@ -7,7 +7,7 @@ An AI-assisted resume workspace built with the Next.js App Router, Supabase (Aut
 | Area | State |
 |---|---|
 | Auth, upload, private storage, resume library | Built |
-| Resume parsing | Built. A downloaded spaCy model (`en_Resume_Parser_pipeline`) is served by the model server. Our own trained parser (`hirelabs-parser`) is in progress. If the parser is unavailable, the resume text is saved without profile fields. There is no external fallback. |
+| Resume parsing | PDF, DOC, DOCX, ODT, text, and Markdown extraction is built. When the trained `hirelabs-parser` is unavailable, the app uses a clearly labeled rules-based demo parser for basic profile fields; verify its output because it is not a trained model. Image-only PDFs still need OCR. |
 | Candidate evaluation and role brief | Run only on our fine-tuned evaluator (`hirelabs-evaluator`) through Ollama. Fine-tuning is in progress. If Ollama is down, the API returns 503. |
 | Semantic matching | Built. The `/api/match` endpoint, pgvector HNSW migration (`supabase/migrations/005_semantic_matching.sql`), and `hirelabs-matcher` model (384d fine-tuned from `BAAI/bge-small-en-v1.5`) are implemented (see [`docs/api/MATCH_CONTRACT.md`](docs/api/MATCH_CONTRACT.md)). |
 | Model results page | Built. It shows real numbers once the evaluation script writes `public/model-results.json` (see [`docs/results/RESULTS_FORMAT.md`](docs/results/RESULTS_FORMAT.md)). |

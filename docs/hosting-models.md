@@ -9,6 +9,8 @@ Vercel (website) ──HTTPS + Bearer token──► Cloudflare tunnel ──►
                                                                    └─ /api/chat ──► Ollama 127.0.0.1:11434 (hirelabs-evaluator)
 ```
 
+If the trained `/parse` model is unavailable, the Next.js app uses a rules-based demo parser for basic profile fields and clearly marks that output as untrained. The matcher and evaluator still require their model services.
+
 ## Security
 
 - **Shared token:** with `MODEL_API_TOKEN` set, the model server rejects every request without `Authorization: Bearer <token>` (HTTP 401). The only exception is `/health`, which reports readiness booleans only. The server refuses to start with a token shorter than 32 characters.
