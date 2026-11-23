@@ -154,20 +154,39 @@ export async function POST(request) {
       );
     }
 
-    // Set processing state before extraction.
-    const { error: stateError } = await updateResume(
-      auth.supabase,
-      resume.id,
-      auth.user.id,
+    const jobId = crypto.randomUUID();
+    const { data: claimedRows, error: claimError } = await auth.supabase.rpc(
+      'claim_resume_for_parsing',
       {
-        processing_status: 'processing',
-        parser_error: null,
+        p_resume_id: resume.id,
+        p_job_id: jobId,
+        p_allow_retry: body?.retry === true,
       }
     );
 
-    if (stateError) {
-      throw stateError;
+    if (claimError) {
+      throw claimError;
     }
+
+    if (!claimedRows?.length) {
+      const { data: current } = await auth.supabase
+        .from('resumes')
+        .select(
+          'id,user_id,file_name,file_path,file_type,file_size,processing_status,processing_started_at,processing_attempts,created_at,parsed_text,extracted_skills,candidate_name,candidate_title,years_experience,profile_completeness,parser_error'
+        )
+        .eq('id', resume.id)
+        .eq('user_id', auth.user.id)
+        .maybeSingle();
+
+      return apiError(
+        'RESUME_ALREADY_PROCESSING',
+        'Resume processing is already in progress.',
+        409,
+        current ? { resume: current } : null
+      );
+    }
+
+    resume = claimedRows[0];
 
     const {
       data: file,
@@ -248,7 +267,9 @@ export async function POST(request) {
     if (saveError) {
       throw saveError;
     }
-    return apiSuccess({ ...saved, model_used: enrichment.modelUsed || null });
+    return apiSuccess({
+      resume: { ...saved, model_used: enrichment.modelUsed || null },
+    });
   } catch (error) {
     console.error('Resume processing failed:', {
       name:
@@ -282,11 +303,32 @@ export async function POST(request) {
       }
     }
 
-    if (error instanceof ResumeParseError) return apiError('UNREADABLE_RESUME', error.message, 422);
+    let failedResume = resume;
+    if (resume?.id) {
+      const { data: current } = await auth.supabase
+        .from('resumes')
+        .select(
+          'id,user_id,file_name,file_path,file_type,file_size,processing_status,processing_started_at,processing_attempts,created_at,parsed_text,extracted_skills,candidate_name,candidate_title,years_experience,profile_completeness,parser_error'
+        )
+        .eq('id', resume.id)
+        .eq('user_id', auth.user.id)
+        .maybeSingle();
+      if (current) failedResume = current;
+    }
+
+    if (error instanceof ResumeParseError) {
+      return apiError(
+        'UNREADABLE_RESUME',
+        error.message,
+        422,
+        failedResume ? { resume: failedResume } : null
+      );
+    }
     return apiError(
       'PARSE_FAILED',
       'Unable to process this resume. Please retry.',
-      500
+      500,
+      failedResume ? { resume: failedResume } : null
     );
   }
 }

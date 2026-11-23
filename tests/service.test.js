@@ -199,6 +199,36 @@ describe('requestParse', () => {
     assert.equal(outcome.error, null);
   });
 
+  it('accepts the standardized success and nested error envelopes', async () => {
+    const client = makeClient({});
+    const successFetch = async () => new Response(
+      JSON.stringify({
+        success: true,
+        data: {
+          resume: { id: 'r1', processing_status: 'completed' },
+        },
+      }),
+      { status: 200 }
+    );
+
+    const success = await requestParse(client, 'r1', { fetchImpl: successFetch });
+    assert.equal(success.resume.processing_status, 'completed');
+    assert.equal(success.error, null);
+
+    const failureFetch = async () => new Response(
+      JSON.stringify({
+        success: false,
+        error: { code: 'UNREADABLE_RESUME', message: 'No readable text was found.' },
+        resume: { id: 'r1', processing_status: 'failed' },
+      }),
+      { status: 422 }
+    );
+
+    const failure = await requestParse(client, 'r1', { fetchImpl: failureFetch });
+    assert.equal(failure.resume.processing_status, 'failed');
+    assert.match(failure.error, /No readable text/);
+  });
+
   it('returns the failed row and message for a parse failure without throwing', async () => {
     const client = makeClient({});
     const fetchImpl = async () => new Response(
