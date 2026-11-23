@@ -178,11 +178,17 @@ export async function POST(request) {
         .eq('user_id', auth.user.id)
         .maybeSingle();
 
-      return apiError(
-        'RESUME_ALREADY_PROCESSING',
-        'Resume processing is already in progress.',
-        409,
-        current ? { resume: current } : null
+      if (current) {
+        return apiSuccess({ resume: current }, 202);
+      }
+      return apiSuccess(
+        {
+          resume: {
+            id: resume.id,
+            processing_status: 'processing',
+          },
+        },
+        202
       );
     }
 

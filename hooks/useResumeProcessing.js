@@ -97,7 +97,7 @@ export function useResumeProcessing({ user, onAuthRequired, onResumeReady }) {
     }
 
     // Another tab (or request) owns the job: wait for its result instead of re-parsing.
-    if (outcome.status === 409 && outcome.resume?.processing_status === 'processing') {
+    if (outcome.resume?.processing_status === 'processing') {
       upsertResume(outcome.resume);
       const settled = await waitForProcessing(supabase, resumeId, { isCancelled: () => !mountedRef.current });
       if (settled) outcome = { ...outcome, resume: settled, error: settled.processing_status === 'completed' ? null : settled.parser_error };
